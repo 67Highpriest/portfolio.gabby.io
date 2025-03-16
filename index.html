@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+       <div class="logo" onclick="location.href='index.html';">
+    PRIEST
+</div>
+<nav>
+    <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="projects.html">Portfolio</a></li> <!-- Fixed this line -->
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#" id="faq-link">FAQ</a></li>
+        <li><a href="#contact" id="contact-toggle">Contact Me</a></li>
+    </ul>
+</nav>
+
+<div id="theme-toggle">
+    <i class="fas fa-moon"></i> <!-- Default: Dark mode icon -->
+</div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="content">
+            <h2>IMAGINATION IS MORE IMPORTANT THAN KNOWLEDGE</h2>
+            <p>Together we achieve more than any single person could ever do alone.</p>
+            <a href="#projects" class="btn">Priest</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+<section id="about">
+    <div class="content">
+        <h2>About Me</h2>
+        <p>I build modern, high-quality web experiences.</p>
+        <p>As a passionate web developer, I specialize in creating seamless and responsive websites that cater to both the user and business needs. My skills span across frontend and backend development, with a focus on providing user-centric solutions. I believe in delivering clean, efficient code while always staying updated with the latest trends in web development. Whether it's crafting visually appealing designs or optimizing performance, I aim to bring your ideas to life on the web.</p>
+        <p>When I'm not coding, you can find me exploring new technologies, learning, or working on exciting personal projects.</p>
+    </div>
+</section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="content">
+            <h2>Skills</h2>
+            <p>Here are some of the technologies and tools I specialize in:</p>
+            <ul>
+                <li>HTML, CSS, JavaScript</li>
+                <li>React, Vue, Tailwind CSS</li>
+                <li>Node.js, Express, Firebase</li>
+                <li>Database Management (MongoDB, SQL)</li>
+                <li>API Development & Integration</li>
+                <li>Cybersecurity & Encryption</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+<section id="experience">
+    <div class="content">
+        <h2>Experience</h2>
+        <p>My journey so far:</p>
+        <ul>
+            <li><strong>Frontend Developer - Be Nice Restaurant</strong> (2024-Present)</li>
+            <li><strong>Software Developer - MacVillas Real Estate</strong> (2023-2024)</li>
+            <li><strong>Freelance Web Developer</strong> (2022-Present)</li>
+            <li><strong>Supreme Court of Justice - Ghana</strong> (Present)</li>
+            <li><strong>National Service - Legal Aid Scheme</strong> (Completed)</li>
+            <li><strong>Intern - Bitnob Technologies</strong> (Completed)</li>
+            <li><strong>GamePoint Tennis</strong> (Present)</li>
+        </ul>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+    <div class="content">
+        <h2>Portfolio</h2>
+        <p>Check out some of my best projects.</p>
+        <p>Over the years, I have had the opportunity to work on a diverse range of web development projects. From building dynamic websites to creating complex web applications, each project has sharpened my skills and broadened my understanding of the web development landscape. I take pride in delivering projects that not only meet client expectations but also provide intuitive, efficient, and scalable solutions.</p>
+        <p>Below, you'll find a selection of my recent work. Feel free to explore and see how I can bring your ideas to life.</p>
+        <div class="projects-container">
+            <!-- Projects will go here -->
+        </div>
+        <!-- Button linking to the projects page -->
+        <a href="projects.html" class="btn">View All Projects</a>
+    </div>
+</section>
+
+    <!-- Testimonials Section -->
+<section id="testimonials">
+    <div class="content">
+        <h2>What People Say</h2>
+        <p>Some words from my clients and colleagues.</p>
+        
+        <div class="testimonial">
+            <p>"Priest is an outstanding developer with an eye for detail. Highly recommended!"</p>
+            <strong>- Macmillan Azibere (MacVillas)</strong>
+        </div>
+        
+        <div class="testimonial">
+            <p>"Amazing work! The website was beyond expectations and delivered on time."</p>
+            <strong>- BeNice Restaurant</strong>
+        </div>
+        
+        <div class="testimonial">
+            <p>"Exceptional skills and dedication. Working with Priest has been a game-changer!"</p>
+            <strong>- GamePoint Tennis</strong>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+<!-- FAQ Bot Button (Fixed Bottom Left) -->
+<button id="faq-bot-button">FAQs Bot</button>
+
+<!-- Chatbot Popup -->
+<div id="faq-popup">
+    <div id="faq-header">
+        <h3>FAQs Chatbot</h3>
+        <button id="faq-close">&times;</button>
+    </div>
+
+    <div id="faq-chatbox">
+        <p class="bot-text"><span>Hello! Ask me anything about my work.</span></p>
+    </div>
+
+    <!-- Input & Send Button -->
+    <div id="faq-input-container">
+        <input type="text" id="faq-input" placeholder="Type your question...">
+        <button id="faq-send">Ask</button>
+    </div>
+</div>
+
+
+
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="content">
+            <h2>Contact Me</h2>
+            <p>Have a project in mind? Let's talk!</p>
+            <p>Click on the Contact Me above to fill the form</p>
+            <form id="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="assets/script.js"></script>
+
+
+
+<footer>
+    <div class="footer-container">
+        <div class="social-links">
+            <!-- Twitter -->
+            <a href="https://twitter.com/yourusername" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a>
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/yourusername" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/yourusername" target="_blank">
+                <i class="fab fa-github"></i>
+            </a>
+            <!-- Facebook -->
+            <a href="https://facebook.com/yourusername" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="https://instagram.com/yourusername" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <!-- YouTube -->
+            <a href="https://youtube.com/c/yourusername" target="_blank">
+                <i class="fab fa-youtube"></i>
+            </a>
+            <!-- Behance -->
+            <a href="https://behance.net/yourusername" target="_blank">
+                <i class="fab fa-behance"></i>
+            </a>
+            <!-- Dribbble -->
+            <a href="https://dribbble.com/yourusername" target="_blank">
+                <i class="fab fa-dribbble"></i>
+            </a>
+            <!-- Medium -->
+            <a href="https://medium.com/@yourusername" target="_blank">
+                <i class="fab fa-medium"></i>
+            </a>
+            <!-- Pinterest -->
+            <a href="https://pinterest.com/yourusername" target="_blank">
+                <i class="fab fa-pinterest"></i>
+            </a>
+        </div>
+        <p>&copy; 2025 Gabriel Mantey. All Rights Reserved.</p>
+</footer>
+
+
+</body>
+</html>

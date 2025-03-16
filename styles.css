@@ -1,0 +1,680 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #0a0a0a;
+    color: #fff;
+    text-align: center;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0f0;
+}
+
+/* Make nav swipeable */
+nav {
+    overflow-x: auto;
+    white-space: nowrap;
+    display: flex;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+    -ms-overflow-style: none; /* Hide scrollbar for IE/Edge */
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari) */
+nav::-webkit-scrollbar {
+    display: none;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: nowrap; /* Prevents wrapping */
+}
+
+nav li {
+    flex-shrink: 0; /* Prevents items from shrinking */
+    padding: 10px 15px;
+}
+
+/* Smooth scrolling on swipe */
+nav ul {
+    scroll-behavior: smooth;
+}
+
+/* Sections */
+section {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Background Images with Fade Effect */
+section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(50%);
+    opacity: 0;
+    animation: fadeImages 5s infinite alternate;
+}
+
+#hero::before { background-image: url('images/hero.jpg'); }
+#about::before { background-image: url('images/about.jpg'); }
+#projects::before { background-image: url('images/projects.jpg'); }
+#contact::before { background-image: url('images/contact.jpg'); }
+
+/* Fade-in/Fade-out Animation */
+@keyframes fadeImages {
+    0% { opacity: 0; }
+    50% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* Text Styling */
+h2 {
+    font-size: 2.5em;
+    z-index: 2;
+}
+
+/* Smooth Section Transitions */
+section {
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 1s forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+
+/* Contact Form */
+#contact-form {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+    width: 90%; /* Use percentage instead of fixed max-width */
+    max-width: 500px; /* Keeps it neat on larger screens */
+    margin: 20px auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 255, 0, 0.2);
+    box-sizing: border-box; /* Prevents overflowing due to padding */
+}
+
+/* Show Form */
+#contact-form.show {
+    display: block;
+    opacity: 1;
+}
+
+/* Input Fields */
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #0f0;
+    border-radius: 5px;
+    color: black;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensures full width includes padding */
+}
+
+/* Textarea */
+#contact-form textarea {
+    height: 120px;
+    resize: none;
+}
+
+/* Submit Button */
+#contact-form button {
+    width: 100%;
+    padding: 12px;
+    background: #0f0;
+    border: none;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+#contact-form button:hover {
+    background: #0c0;
+}
+
+/* Fully Responsive Fix */
+@media (max-width: 600px) {
+    #contact-form {
+        width: 95%; /* Makes sure it fits fully on small screens */
+        padding: 15px; /* Adjusts padding so it doesn’t overflow */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Skills Section */
+#skills {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#skills ul {
+    list-style: none;
+    padding: 0;
+}
+
+#skills li {
+    font-size: 18px;
+    margin: 10px 0;
+    padding: 10px;
+    background: rgba(0, 255, 0, 0.2);
+    border-left: 5px solid #0f0;
+    display: inline-block;
+    width: 80%;
+}
+
+/* Experience Section */
+#experience {
+    background: rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#experience ul {
+    list-style: none;
+    padding: 0;
+}
+
+#experience li {
+    font-size: 18px;
+    margin: 15px 0;
+    padding: 10px;
+    border-bottom: 2px solid #0f0;
+}
+
+/* Testimonials Section */
+#testimonials {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.testimonial {
+    background: rgba(0, 255, 0, 0.1);
+    padding: 15px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-left: 5px solid #0f0;
+    font-style: italic;
+}
+
+
+/* Floating FAQ Bot Button */
+#faq-bot-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #00ff66;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 255, 102, 0.3);
+    z-index: 9999; /* Ensures the button stays above other content */
+}
+
+/* FAQ Chatbox Popup (Hidden by Default) */
+#faq-popup {
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    width: 320px;
+    background: #111;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 255, 102, 0.3);
+    display: none;
+    flex-direction: column;
+    z-index: 9998; /* Ensures chatbox is below the button but still above other content */
+}
+
+/* Chat Header */
+#faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #00ff66;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#faq-header h3 {
+    color: white;
+    margin: 0;
+}
+
+#faq-close {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Chatbox Messages */
+#faq-chatbox {
+    height: 250px;
+    overflow-y: auto;
+    background: #000;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    margin-bottom: 10px;
+    
+    /* Fix: Ensure messages don’t overlap */
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Adds space between messages */
+}
+
+/* Message Styling */
+.bot-text, .user-text {
+    display: flex;
+    width: fit-content;
+    max-width: 80%;
+    word-wrap: break-word;
+    margin: 5px 0;
+}
+
+/* Bot Response */
+.bot-text span {
+    background: #00ff66;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* User Input */
+.user-text span {
+    background: #222;
+    color: #00ff66;
+    padding: 10px;
+    border-radius: 5px;
+    align-self: flex-end; /* Aligns user messages to the right */
+}
+
+/* Input & Button Wrapper */
+#faq-input-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Prevent Mobile Zoom on Input */
+#faq-input {
+    font-size: 16px; /* Ensures no zoom on mobile */
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: #222;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Optional: Disable Pinch Zoom (iOS Safari & Android Chrome) */
+@media screen and (max-width: 768px) {
+    html, body {
+        touch-action: manipulation;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}
+
+/* Send Button */
+#faq-send {
+    padding: 10px;
+    background: #00ff66;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 40px 20px; /* Added left/right padding for better spacing */
+    max-width: 1200px;
+    margin: 0 auto; /* Centers the section */
+}
+
+.project {
+    width: 100%;
+    max-width: 300px; /* Prevents stretching on wider screens */
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+}
+
+.project img {
+    width: 100%;
+    height: 200px; /* Ensures uniform image size */
+    object-fit: cover; /* Prevents distortion */
+    border-bottom: 2px solid #D84B16;
+}
+
+.project h3 {
+    margin: 15px 0;
+    font-size: 1.2em;
+}
+
+.project p {
+    font-size: 0.9em;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #0f0;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 5px;
+    transition: 0.3s;
+}
+
+.btn.secondary {
+    background: #0f0;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #00ff66;
+    color: #000;
+    padding: 12px;
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 255, 102, 0.3);
+    cursor: pointer;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#theme-toggle:hover {
+    background: #00cc55;
+}
+
+#theme-toggle i {
+    font-size: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Theme Toggle */
+#theme-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    color: #00ff66;
+    background: #111;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+    margin-right: 20px;
+}
+
+#theme-toggle:hover {
+    background: #00ff66;
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Light Mode */
+body.light-mode {
+    background: #fff;
+    color: #000;
+}
+
+body.light-mode header {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 255, 102, 0.4);
+}
+
+body.light-mode nav ul li a {
+    color: #000;
+}
+
+body.light-mode .logo {
+    color: #00cc66;
+}
+
+body.light-mode #theme-toggle {
+    background: #ddd;
+    color: #000;
+}
+
+body.light-mode #theme-toggle:hover {
+    background: #00cc66;
+    color: #fff;
+}
+
+body.light-mode .project {
+    background: #f8f8f8;
+    box-shadow: 0px 4px 20px rgba(0, 255, 102, 0.2);
+}
+
+body.light-mode .btn {
+    background: #00cc66;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* General Footer Style */
+footer {
+    background-color: #333; /* Dark background */
+    color: white;
+    padding: 40px 20px; /* Add more padding for spacing */
+    position: relative; /* Ensure it doesn't overlap */
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    clear: both; /* Clear any floated elements above the footer */
+}
+
+/* Container for Footer Content */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line */
+    justify-content: center; /* Center the icons */
+    gap: 20px; /* Adds space between icons */
+    margin-bottom: 20px; /* Space between icons and copyright text */
+}
+
+/* Style for each social media link (icon) */
+.social-links a {
+    font-size: 30px; /* Bigger icon size */
+    color: white;    /* Icon color */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    width: 45px; /* Set fixed width for icons */
+    height: 45px; /* Set fixed height for icons */
+    display: flex; /* Use flex to center the icon */
+    align-items: center; /* Vertically center the icon */
+    justify-content: center; /* Horizontally center the icon */
+    border-radius: 50%; /* Make icons round */
+    background-color: #444; /* Background color for the icon */
+}
+
+.social-links a:hover {
+    color: #D84B16; /* Hover color */
+    transform: scale(1.1); /* Slight grow on hover */
+}
+
+/* Footer text */
+footer p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: white;
+}

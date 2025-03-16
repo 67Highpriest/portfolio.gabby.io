@@ -1,0 +1,434 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #000;
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 255, 102, 0.2);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00ff66;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #00ff66;
+}
+
+/* Projects Section */
+#projects {
+    padding: 100px 20px 50px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #00ff66;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #aaa;
+    max-width: 600px;
+    margin: auto;
+    margin-bottom: 40px;
+}
+
+/* Project Cards */
+.projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.project {
+    width: 320px;
+    background: #111;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0px 4px 20px rgba(0, 255, 102, 0.2);
+    text-align: center;
+    padding: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 6px 25px rgba(0, 255, 102, 0.4);
+}
+
+.project img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-bottom: 3px solid #00ff66;
+    border-radius: 10px;
+}
+
+.project h3 {
+    margin: 15px 0;
+    font-size: 1.5em;
+    color: #00ff66;
+}
+
+.project p {
+    font-size: 1rem;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background: #00ff66;
+    color: #000;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn.secondary {
+    background: #222;
+    color: #00ff66;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul li {
+        margin-bottom: 10px;
+    }
+
+    .projects-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .project {
+        width: 90%;
+    }
+}
+
+
+
+
+
+
+
+
+/* Theme Toggle */
+#theme-toggle {
+    cursor: pointer;
+    font-size: 24px;
+    color: #00ff66;
+    background: #111;
+    padding: 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+    margin-right: 20px;
+}
+
+#theme-toggle:hover {
+    background: #00ff66;
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Light Mode */
+body.light-mode {
+    background: #fff;
+    color: #000;
+}
+
+body.light-mode header {
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 10px rgba(0, 255, 102, 0.4);
+}
+
+body.light-mode nav ul li a {
+    color: #000;
+}
+
+body.light-mode .logo {
+    color: #00cc66;
+}
+
+body.light-mode #theme-toggle {
+    background: #ddd;
+    color: #000;
+}
+
+body.light-mode #theme-toggle:hover {
+    background: #00cc66;
+    color: #fff;
+}
+
+body.light-mode .project {
+    background: #f8f8f8;
+    box-shadow: 0px 4px 20px rgba(0, 255, 102, 0.2);
+}
+
+body.light-mode .btn {
+    background: #00cc66;
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+/* General Footer Style */
+footer {
+    background-color: #333; /* Dark background */
+    color: white;
+    padding: 40px 20px; /* Add more padding for spacing */
+    position: relative; /* Ensure it doesn't overlap */
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+    clear: both; /* Clear any floated elements above the footer */
+}
+
+/* Container for Footer Content */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line */
+    justify-content: center; /* Center the icons */
+    gap: 20px; /* Adds space between icons */
+    margin-bottom: 20px; /* Space between icons and copyright text */
+}
+
+/* Style for each social media link (icon) */
+.social-links a {
+    font-size: 30px; /* Bigger icon size */
+    color: white;    /* Icon color */
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth hover effect */
+    width: 45px; /* Set fixed width for icons */
+    height: 45px; /* Set fixed height for icons */
+    display: flex; /* Use flex to center the icon */
+    align-items: center; /* Vertically center the icon */
+    justify-content: center; /* Horizontally center the icon */
+    border-radius: 50%; /* Make icons round */
+    background-color: #444; /* Background color for the icon */
+}
+
+.social-links a:hover {
+    color: #D84B16; /* Hover color */
+    transform: scale(1.1); /* Slight grow on hover */
+}
+
+/* Footer text */
+footer p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: white;
+}
+
+
+
+
+
+
+/* Floating FAQ Bot Button */
+#faq-bot-button {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: #00ff66;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0px 4px 10px rgba(0, 255, 102, 0.3);
+    z-index: 9999; /* Ensures the button stays above other content */
+}
+
+/* FAQ Chatbox Popup (Hidden by Default) */
+#faq-popup {
+    position: fixed;
+    bottom: 80px;
+    left: 20px;
+    width: 320px;
+    background: #111;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 255, 102, 0.3);
+    display: none;
+    flex-direction: column;
+    z-index: 9998; /* Ensures chatbox is below the button but still above other content */
+}
+
+/* Chat Header */
+#faq-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #00ff66;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+
+#faq-header h3 {
+    color: white;
+    margin: 0;
+}
+
+#faq-close {
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Chatbox Messages */
+#faq-chatbox {
+    height: 250px;
+    overflow-y: auto;
+    background: #000;
+    border-radius: 10px;
+    padding: 10px;
+    color: white;
+    margin-bottom: 10px;
+    
+    /* Fix: Ensure messages don’t overlap */
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Adds space between messages */
+}
+
+/* Message Styling */
+.bot-text, .user-text {
+    display: flex;
+    width: fit-content;
+    max-width: 80%;
+    word-wrap: break-word;
+    margin: 5px 0;
+}
+
+/* Bot Response */
+.bot-text span {
+    background: #00ff66;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* User Input */
+.user-text span {
+    background: #222;
+    color: #00ff66;
+    padding: 10px;
+    border-radius: 5px;
+    align-self: flex-end; /* Aligns user messages to the right */
+}
+
+/* Input & Button Wrapper */
+#faq-input-container {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+/* Prevent Mobile Zoom on Input */
+#faq-input {
+    font-size: 16px; /* Ensures no zoom on mobile */
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: #222;
+    color: white;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Optional: Disable Pinch Zoom (iOS Safari & Android Chrome) */
+@media screen and (max-width: 768px) {
+    html, body {
+        touch-action: manipulation;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
+    }
+}
+
+/* Send Button */
+#faq-send {
+    padding: 10px;
+    background: #00ff66;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
